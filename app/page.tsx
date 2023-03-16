@@ -7,7 +7,7 @@ export default function Home() {
 	const { authToken } = useAuth()
 	const router = useRouter()
 
-	const REDIRECT_URI = 'http://127.0.0.1:3000/user'
+	const REDIRECT_URI = `${window.location.origin}/user`
 	const RESPONSE_TYPE = 'code'
 	const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID
 	const SCOPE = 'identity+read+mysubreddits+vote+subscribe+save+edit'
