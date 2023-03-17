@@ -1,5 +1,6 @@
 'use client'
 import { useAuth } from '@/hooks/useAuth'
+import constants from '@/utils/constants'
 import { useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
@@ -7,13 +8,8 @@ export default function Home() {
 	const { authToken } = useAuth()
 	const router = useRouter()
 
-	const REDIRECT_URI = `${window.location.origin}/user`
-	const RESPONSE_TYPE = 'code'
-	const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID
-	const SCOPE = 'identity+read+mysubreddits+vote+subscribe+save+edit'
-	const DURATION = 'permanent'
 	const STATE = Math.random().toString(16).substring(2)
-	const authUrl = `https://www.reddit.com/api/v1/authorize?client_id=${CLIENT_ID}&response_type=${RESPONSE_TYPE}&state=${STATE}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}&duration=${DURATION}`
+	const authUrl = `https://www.reddit.com/api/v1/authorize?client_id=${constants.CLIENT_ID}&response_type=${constants.RESPONSE_TYPE}&state=${STATE}&redirect_uri=${constants.REDIRECT_URI}&scope=${constants.SCOPE}&duration=${constants.DURATION}`
 
 	if (authToken) router.push('/user')
 
