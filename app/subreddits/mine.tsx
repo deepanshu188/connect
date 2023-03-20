@@ -32,10 +32,10 @@ export const Mine = () => {
 					{subscribers?.map(({ data }: any, i: any) => (
 						<div
 							key={i}
-							className='flex items-center shadow-md rounded-xl w-2/4 mx-auto p-2 bg-white my-2'
+							className='flex items-center shadow-md rounded-xl sm:w-2/4 mx-auto p-2 bg-white my-2'
 						>
 							<img
-								src={data?.icon_img || data.mobile_banner_image || data.community_icon}
+								src={data?.icon_img || data?.mobile_banner_image || data?.community_icon}
 								width={22}
 								height={22}
 								className='rounded-full'
@@ -45,7 +45,7 @@ export const Mine = () => {
 					))}
 				</>
 			) : (
-				<CircularProgress />
+				<CircularProgress style={{ color: '#121417' }} />
 			)}
 		</div>
 	)

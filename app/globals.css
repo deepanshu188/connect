@@ -10,8 +10,12 @@ body::-webkit-scrollbar-track {
 	background: white;
 }
 
+body {
+	background-color: rgb(241 245 249);
+}
+
 body::-webkit-scrollbar-thumb {
-	background: rgba(161, 54, 237, 0.404);
+	background: #12141776;
 	border-radius: 100px;
 	border: 1px solid transparent;
 	background-clip: content-box;

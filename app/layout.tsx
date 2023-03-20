@@ -11,6 +11,12 @@ const nunito = Nunito({
 export const metadata = {
 	title: 'Connect',
 	description: 'Connect with the reddit client!',
+	manifest: '/manifest.json',
+	viewport: {
+		width: 'device-width',
+		initialScale: 1,
+		maximumScale: 1,
+	},
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
