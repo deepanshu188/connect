@@ -1,6 +1,7 @@
 import { Btn, Select } from '@/components/customInputs'
 import { Postcard } from '@/components/postcard'
 import { useAuth } from '@/hooks/useAuth'
+import { AuthenticatedReq } from '@/utils/AuthenticatedReq'
 import { CircularProgress } from '@mui/material'
 import { useEffect, useState } from 'react'
 
@@ -26,6 +27,7 @@ export const Posts: any = () => {
 	}
 
 	useEffect(() => {
+		// AuthenticatedReq(authToken, getNewPosts)
 		getNewPosts(authToken)
 	}, [authToken, postType, after])
 
@@ -63,7 +65,7 @@ export const Posts: any = () => {
 			/>
 			<div className={`flex flex-col items-center my-2 gap-4 w-full ${loadingStyle}`}>
 				{loading ? (
-					<CircularProgress />
+					<CircularProgress style={{ color: '#121417' }} />
 				) : (
 					<>
 						{posts?.map(({ data }, i) => (

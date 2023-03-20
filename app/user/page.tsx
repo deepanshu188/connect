@@ -20,7 +20,6 @@ const User = () => {
 				constants.REDIRECT_URI
 			}`,
 		})
-
 		return data.json()
 	}
 
